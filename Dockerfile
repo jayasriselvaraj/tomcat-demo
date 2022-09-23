@@ -4,9 +4,9 @@ RUN apk update
 
 RUN apk add openjdk11
 
-ENV CATALINA_HOME /opt/tomcat
+#ENV CATALINA_HOME /opt/tomcat
 
-ENV PATH $CATALINA_HOME/bin:$PATH
+#ENV PATH $CATALINA_HOME/bin:$PATH
 
 RUN mkdir -p "$CATALINA_HOME"
 
