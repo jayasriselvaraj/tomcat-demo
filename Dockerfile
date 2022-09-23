@@ -20,6 +20,7 @@ RUN mv apache-tomcat-8.5.82/* /opt/tomcat
 
 EXPOSE 8080
 
-COPY ./sample.war /opt/tomcat/webapps
+COPY ./webapp.war /opt/tomcat/webapps
 
 #COPY ./webapp.war $CATALINA_HOME/webapps
+CMD ["/opt/tomcat/bin/catalina.sh","run"]
