@@ -22,4 +22,4 @@ EXPOSE 8080
 
 #COPY ./sample.war /usr/local/webapps
 
-COPY ./sample.war $CATALINA_HOME/webapps
+COPY ./webapp.war $CATALINA_HOME/webapps
