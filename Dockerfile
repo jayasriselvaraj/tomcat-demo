@@ -30,4 +30,4 @@ COPY ./webapp.war /usr/local/tomcat/webapps
 
 #COPY ./webapp.war $CATALINA_HOME/webapps
 
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+CMD ["catalina.sh","run"]
