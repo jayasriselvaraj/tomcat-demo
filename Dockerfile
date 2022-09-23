@@ -23,4 +23,4 @@ EXPOSE 8080
 COPY ./webapp.war /opt/tomcat/webapps
 
 #COPY ./webapp.war $CATALINA_HOME/webapps
-CMD ["/opt/tomcat/bin/catalina.sh","run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
