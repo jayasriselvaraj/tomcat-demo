@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk update
 
-RUN apk add openjdk11-jre-headless
+RUN apk add openjdk11
 
 RUN mkdir /opt/tomcat/
 
