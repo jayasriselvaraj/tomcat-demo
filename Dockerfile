@@ -10,7 +10,6 @@ RUN mv apache-tomcat-9.0.65/* /opt/tomcat/.
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
-RUN curl -O -L 
 
 #ENV TOMCAT_MAJOR=9 
 
@@ -34,7 +33,7 @@ RUN curl -O -L
 
 #RUN mv apache-tomcat-8.5.82/* /opt/tomcat
 #COPY webapp.war ${TOMCAT_HOME}/webapps/
-
+COPY webapp.war /opt/tomcat/webapps
 
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 EXPOSE 8080
