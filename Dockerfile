@@ -1,19 +1,28 @@
-FROM alpine:latest
+ARG BASE_IMAGE=alpine
+ARG ALPINE_VERSION=LATEST
+FROM ${BASE_IMAGE}:${ALPINE_VERSION}
+ENV TOMCAT_MAJOR=9 \
+TOMCAT_VERSION=9.0.22 \
+TOMCAT_HOME+/opt/tomcat \
+CATALINA_HOME=opt/tomcat \
+CATALINA_OUT=/dev/null
+#FROM alpine:latest
+RUN apk --update curl openjdk11 && \
+curl -jksSL -o /tmp/apache-tomcat.tar.gz https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
 
-RUN apk update
+#RUN apk add openjdk11
 
-RUN apk add openjdk11
+#RUN mkdir /opt/tomcat/
 
-RUN mkdir /opt/tomcat/
+#WORKDIR /opt/tomcat
 
-WORKDIR /opt/tomcat
+#ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.tar.gz .
 
-ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.tar.gz .
+#RUN tar -xvzf  apache-tomcat-8.5.82.tar.gz
 
-RUN tar -xvzf  apache-tomcat-8.5.82.tar.gz
+#RUN mv apache-tomcat-8.5.82/* /opt/tomcat
+COPY webapp.war ${TOMCAT_HOME}/webapps/
 
-RUN mv apache-tomcat-8.5.82/* /opt/tomcat
 
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 EXPOSE 8080
-
-CMD ["/opt/tomcat/catalina.sh","run"]
