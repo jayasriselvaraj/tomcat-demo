@@ -1,13 +1,13 @@
 ARG BASE_IMAGE=alpine
 ARG ALPINE_VERSION=LATEST
 FROM ${BASE_IMAGE}:${ALPINE_VERSION}
-ENV TOMCAT_MAJOR=9 \
-TOMCAT_VERSION=9.0.22 \
-TOMCAT_HOME+/opt/tomcat \
-CATALINA_HOME=opt/tomcat \
+ENV TOMCAT_MAJOR=9 
+TOMCAT_VERSION=9.0.22 
+TOMCAT_HOME+/opt/tomcat 
+CATALINA_HOME=opt/tomcat 
 CATALINA_OUT=/dev/null
 #FROM alpine:latest
-RUN apk --update curl openjdk11 && \
+RUN apk --update curl openjdk11 && 
 curl -jksSL -o /tmp/apache-tomcat.tar.gz https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
 
 #RUN apk add openjdk11
