@@ -9,7 +9,7 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.82/bin/apache-tomcat-8.5.82.ta
 RUN tar -xvzf apache-tomcat-8.5.82.tar.gz
 RUN mv apache-tomcat-8.5.82/* /usr/local/tomcat
 EXPOSE 8080
-ADD sample.war /usr/local/tomcat/webapps/
+ADD webapp(1).war /usr/local/tomcat/webapps/
 CMD ["/usr/local/tomcat/bin/catalina.sh","run"]
 
 
