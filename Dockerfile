@@ -11,7 +11,7 @@ RUN mv apache-tomcat-8.5.82/* /usr/local/tomcat
 
 EXPOSE 8080
 #ARG JAR_FILE=target/original-gs-maven-0.1.0.jar
-COPY ./webapp.war /usr/local/tomcat/webapps
+ADD webapp.war /usr/local/tomcat/webapps/
 
 
 CMD ["/usr/local/tomcat/bin/catalina.sh","run"]
