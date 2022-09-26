@@ -1,15 +1,15 @@
-ARG BASE_IMAGE=alpine
-ARG ALPINE_VERSION=LATEST
-FROM ${BASE_IMAGE}:${ALPINE_VERSION}
-RUN mkdir /opt/tomcat/
+#ARG BASE_IMAGE=alpine
+#ARG ALPINE_VERSION=LATEST
+#FROM ${BASE_IMAGE}:${ALPINE_VERSION}
+#RUN mkdir /opt/tomcat/
 
-WORKDIR /opt/tomcat
-RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
-RUN tar xvfz apache*.tar.gz
-RUN mv apache-tomcat-9.0.65/* /opt/tomcat/.
-RUN java -version
+#WORKDIR /opt/tomcat
+#RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
+#RUN tar xvfz apache*.tar.gz
+#RUN mv apache-tomcat-9.0.65/* /opt/tomcat/.
+#RUN java -version
 
-WORKDIR /opt/tomcat/webapps
+#WORKDIR /opt/tomcat/webapps
 
 #ENV TOMCAT_MAJOR=9 
 
@@ -33,7 +33,22 @@ WORKDIR /opt/tomcat/webapps
 
 #RUN mv apache-tomcat-8.5.82/* /opt/tomcat
 #COPY webapp.war ${TOMCAT_HOME}/webapps/
-COPY webapp.war /opt/tomcat/webapps
+#COPY webapp.war /opt/tomcat/webapps
 
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
-EXPOSE 8080
+#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+#EXPOSE 8080
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
